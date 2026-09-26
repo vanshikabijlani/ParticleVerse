@@ -1,6 +1,3 @@
-Absolutely — copy **everything inside this box** and paste it directly into your `README.md`:
-
-````markdown
 # 🌌 ParticleVerse
 
 ### YOUR HAND. YOUR STORY.
