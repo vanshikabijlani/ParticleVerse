@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="theme-color"
+        content="#05050a"
+    >
+
+    <title>ParticleVerse — VB</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body>
+
+<div id="app">
+
+
+    <!-- ==========================================
+         AMBIENT BACKGROUND
+    =========================================== -->
+
+    <div class="ambient ambient-one"></div>
+
+    <div class="ambient ambient-two"></div>
+
+    <div class="ambient ambient-three"></div>
+
+    <div class="noise"></div>
+
+
+    <!-- ==========================================
+         PARTICLE CANVAS
+    =========================================== -->
+
+    <canvas
+        id="particleCanvas"
+    ></canvas>
+
+
+    <!-- ==========================================
+         INTRO / SETUP SCREEN
+    =========================================== -->
+
+    <section
+        id="intro"
+        class="intro"
+    >
+
+
+        <!-- TOP BAR -->
+
+        <header class="topbar">
+
+            <div class="brand">
+
+                <span class="brand-mark">
+                    VB
+                </span>
+
+                <span class="brand-line"></span>
+
+                <span class="brand-name">
+                    PARTICLEVERSE
+                </span>
+
+            </div>
+
+
+            <div class="version">
+                GESTURE / 02
+            </div>
+
+        </header>
+
+
+        <!-- HERO -->
+
+        <div class="hero">
+
+
+            <div class="eyebrow">
+
+                <span class="status-dot"></span>
+
+                A PARTICLE-POWERED GESTURE LANGUAGE
+
+            </div>
+
+
+            <h1>
+
+                YOUR HAND.
+                <br>
+
+                <span class="gradient-text">
+                    YOUR STORY.
+                </span>
+
+            </h1>
+
+
+            <p class="hero-description">
+
+                Write your own statements.
+                Use one gesture to reveal every word
+                and another to move through your story.
+
+            </p>
+
+
+            <!-- ==================================
+                 STATEMENT BUILDER
+            =================================== -->
+
+            <div
+                class="setup-card"
+                id="setupPanel"
+            >
+
+
+                <div class="setup-header">
+
+                    <div>
+
+                        <div class="setup-label">
+                            BUILD YOUR STORY
+                        </div>
+
+                        <div class="setup-description">
+                            Enter statements for your particle universe.
+                        </div>
+
+                    </div>
+
+
+                    <div class="live-badge">
+
+                        <span></span>
+
+                        LIVE
+
+                    </div>
+
+                </div>
+
+
+                <!-- ==================================
+                     STATEMENTS
+                =================================== -->
+
+                <div class="statement-grid">
+
+
+                    <!-- STATEMENT 01 -->
+
+                    <div class="statement-card">
+
+                        <div class="statement-number">
+                            01
+                        </div>
+
+                        <div class="statement-info">
+
+                            <span class="statement-title">
+                                STATEMENT ONE
+                            </span>
+
+                            <span class="statement-hint">
+                                ☝ INDEX = PLAY
+                            </span>
+
+                        </div>
+
+
+                        <textarea
+                            id="statement1"
+                            maxlength="120"
+                            placeholder="Enter your first statement..."
+                        >I LOVE PARTICLEVERSE</textarea>
+
+                    </div>
+
+
+                    <!-- STATEMENT 02 -->
+
+                    <div class="statement-card">
+
+                        <div class="statement-number">
+                            02
+                        </div>
+
+                        <div class="statement-info">
+
+                            <span class="statement-title">
+                                STATEMENT TWO
+                            </span>
+
+                            <span class="statement-hint">
+                                ✊ FIST = NEXT
+                            </span>
+
+                        </div>
+
+
+                        <textarea
+                            id="statement2"
+                            maxlength="120"
+                            placeholder="Enter your second statement..."
+                        >WELCOME TO MY WORLD</textarea>
+
+                    </div>
+
+
+                    <!-- STATEMENT 03 -->
+
+                    <div class="statement-card">
+
+                        <div class="statement-number">
+                            03
+                        </div>
+
+                        <div class="statement-info">
+
+                            <span class="statement-title">
+                                STATEMENT THREE
+                            </span>
+
+                            <span class="statement-hint">
+                                ✊ FIST = NEXT
+                            </span>
+
+                        </div>
+
+
+                        <textarea
+                            id="statement3"
+                            maxlength="120"
+                            placeholder="Enter your third statement..."
+                        >BUILD LEARN CREATE</textarea>
+
+                    </div>
+
+
+                    <!-- STATEMENT 04 -->
+
+                    <div class="statement-card">
+
+                        <div class="statement-number">
+                            04
+                        </div>
+
+                        <div class="statement-info">
+
+                            <span class="statement-title">
+                                STATEMENT FOUR
+                            </span>
+
+                            <span class="statement-hint">
+                                ✊ FIST = NEXT
+                            </span>
+
+                        </div>
+
+
+                        <textarea
+                            id="statement4"
+                            maxlength="120"
+                            placeholder="Enter another statement..."
+                        >THIS IS MY PARTICLE UNIVERSE</textarea>
+
+                    </div>
+
+
+                </div>
+
+
+                <!-- ==================================
+                     ENTER BUTTON
+                =================================== -->
+
+                <button
+                    id="enterBtn"
+                    class="enter-button"
+                    type="button"
+                >
+
+                    <span>
+                        ENTER PARTICLEVERSE
+                    </span>
+
+                    <span class="button-arrow">
+                        →
+                    </span>
+
+                </button>
+
+
+                <!-- FOOTER -->
+
+                <div class="setup-footer">
+
+                    <span>
+                        ☝ INDEX = PLAY
+                    </span>
+
+                    <span>
+                        •
+                    </span>
+
+                    <span>
+                        ✊ FIST = NEXT
+                    </span>
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+        <!-- SCROLL INDICATOR -->
+
+        <div class="scroll-indicator">
+
+            <span>
+                BUILD YOUR STORY
+            </span>
+
+            <div class="scroll-line"></div>
+
+        </div>
+
+
+    </section>
+
+
+    <!-- ==========================================
+         WEBCAM
+    =========================================== -->
+
+    <video
+        id="webcam"
+        autoplay
+        playsinline
+        muted
+    ></video>
+
+
+    <!-- ==========================================
+         PARTICLEVERSE HUD
+    =========================================== -->
+
+    <section
+        id="hud"
+        class="hud"
+    >
+
+
+        <!-- TOP -->
+
+        <div class="hud-top">
+
+            <div class="hud-brand">
+
+                <span class="hud-dot"></span>
+
+                PARTICLEVERSE
+
+            </div>
+
+
+            <div class="hud-status">
+                HAND CONTROL ACTIVE
+            </div>
+
+        </div>
+
+
+        <!-- CENTER -->
+
+        <div class="hud-center">
+
+            <div
+                id="statementIndicator"
+                class="statement-indicator"
+            >
+                STATEMENT 01
+            </div>
+
+
+            <div
+                id="currentGesture"
+                class="current-gesture"
+            >
+                SHOW ☝ TO BEGIN
+            </div>
+
+
+            <div
+                id="currentWord"
+                class="current-word"
+            >
+                READY
+            </div>
+
+
+            <div
+                id="wordProgress"
+                class="word-progress"
+            >
+                0 / 0
+            </div>
+
+        </div>
+
+
+        <!-- BOTTOM -->
+
+        <div class="hud-bottom">
+
+
+            <div class="instruction">
+
+                <span>
+                    ☝
+                </span>
+
+                PLAY STATEMENT
+
+
+                <span>
+                    ✊
+                </span>
+
+                NEXT STATEMENT
+
+            </div>
+
+
+            <button
+                id="exitBtn"
+                class="exit-button"
+                type="button"
+            >
+                EXIT
+            </button>
+
+
+        </div>
+
+
+    </section>
+
+
+    <!-- ==========================================
+         TRANSITION FLASH
+    =========================================== -->
+
+    <div
+        id="transitionFlash"
+        class="transition-flash"
+    ></div>
+
+
+</div>
+
+
+<!-- ==========================================
+     MAIN JAVASCRIPT
+=========================================== -->
+
+<script src="app.js"></script>
+
+
+<!-- ==========================================
+     HAND TRACKING
+=========================================== -->
+
+<script
+    type="module"
+    src="handTracking.js"
+></script>
+
+
+</body>
+
+</html>
